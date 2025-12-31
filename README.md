@@ -52,7 +52,6 @@ All software dependencies are defined using reproducible environments located in
 .
 ├── README.md
 ├── LICENSE
-├── CITATION.cff
 ├── workflow/
 │   ├── Snakefile
 │   ├── snakemake_rule/
