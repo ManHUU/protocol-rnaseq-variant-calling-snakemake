@@ -1,0 +1,62 @@
+Building DAG of jobs...
+Full Traceback (most recent call last):
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mhu/.cache/snakemake/snakemake/source-cache/runtime-cache/tmphse_r5_9/file/projects/prjs1616/gatk_paper_demo/envs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mhu/.cache/snakemake/snakemake/source-cache/runtime-cache/tmphse_r5_9/file/projects/prjs1616/gatk_paper_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mhu/.cache/snakemake/snakemake/source-cache/runtime-cache/tmphse_r5_9/file/projects/prjs1616'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/__init__.py", line 792, in snakemake
+    success = workflow.execute(
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/workflow.py", line 895, in execute
+    dag.init()
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/dag.py", line 248, in init
+    self.update_needrun(create_inventory=True)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/dag.py", line 1221, in update_needrun
+    if update_needrun(job):
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/dag.py", line 1179, in update_needrun
+    reason.software_stack_changed = any(
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/persistence.py", line 629, in <genexpr>
+    return (f for f in job.expanded_output if func(job, file=f))
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/persistence.py", line 435, in _conda_env_changed
+    return recorded is not None and recorded != self._conda_env(job)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/persistence.py", line 456, in _conda_env
+    return b64encode(job.conda_env.content).decode()
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/deployment/conda.py", line 156, in content
+    self._content = self._get_content()
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/deployment/conda.py", line 131, in _get_content
+    return self.workflow.sourcecache.open(self.file, "rb").read()
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/sourcecache.py", line 369, in open
+    cache_entry = self._cache(source_file)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/sourcecache.py", line 400, in _cache
+    self._do_cache(source_file, cache_entry)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/sourcecache.py", line 406, in _do_cache
+    cache_entry.parent.mkdir(parents=True, exist_ok=True)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/pathlib.py", line 1179, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/pathlib.py", line 1179, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/pathlib.py", line 1180, in mkdir
+    self.mkdir(mode, parents=False, exist_ok=exist_ok)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+KeyboardInterrupt
+
+Cancelling snakemake on user request.
+unlocking
+removed all locks

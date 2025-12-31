@@ -1,0 +1,56 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job             count
+------------  -------
+all                 1
+fastq_to_bam        6
+total               7
+
+Select jobs to execute...
+
+[Tue Dec 30 12:58:39 2025]
+rule fastq_to_bam:
+    input: /projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_11.fastq, /projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam, /projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam.bai
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_11.fastq_to_bam.log
+    jobid: 5
+    reason: Missing output files: /projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam
+    wildcards: sample=liver_11
+    resources: tmpdir=/scratch-local/74316, mem_mb=65536, mem_mib=62500
+
+[Tue Dec 30 12:58:39 2025]
+Error in rule fastq_to_bam:
+    jobid: 5
+    input: /projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_11.fastq, /projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam, /projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam.bai
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_11.fastq_to_bam.log (check log file(s) for error details)
+    conda-env: /gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/conda/13fd3556d6a6be433d92d75a8504f4da_
+    shell:
+        
+        exec &> /projects/prjs1616/gatk_paper_demo/logs/liver_11.fastq_to_bam.log
+        echo "DATE: $(date)"
+        echo "RULE: fastq_to_bam"
+        echo "SAMPLE: liver_11"
+        echo "---------------------------------------"
+
+        # STAR alignment
+        # Generates coordinate-sorted BAM and adds Read Groups required for GATK
+        STAR --runThreadN 1              --genomeDir /projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index              --readFilesIn /projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_11.fastq              --outSAMtype BAM SortedByCoordinate              --outSAMattrRGline ID:liver_11 SM:liver_11 LB:lib1 PL:ILLUMINA PU:unit1              --outFileNamePrefix /projects/prjs1616/gatk_paper_demo/results/liver_11.
+
+        # Rename STAR's default output name to match Snakemake's output
+        mv /projects/prjs1616/gatk_paper_demo/results/liver_11.Aligned.sortedByCoord.out.bam /projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam
+
+        # Index the BAM
+        samtools index -@ 1 /projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam
+        echo "---------------------------------------"
+        echo "Alignment and indexing complete."
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-12-30T125837.973320.snakemake.log

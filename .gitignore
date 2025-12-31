@@ -1,0 +1,12 @@
+# Ignore everything by default
+*
+
+# Allow git files
+!.gitignore
+!README.md
+!LICENSE
+
+# Allow workflow folder and everything inside it
+!workflow/
+!workflow/**
+

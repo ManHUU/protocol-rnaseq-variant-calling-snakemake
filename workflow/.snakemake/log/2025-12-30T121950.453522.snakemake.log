@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WorkflowError:
+Failed to open source file /projects/prjs1616/gatk_paper_demo/envs/aligner.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/projects/prjs1616/gatk_paper_demo/envs/aligner.yaml'

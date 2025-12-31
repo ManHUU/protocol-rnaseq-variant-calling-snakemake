@@ -1,0 +1,11 @@
+Building DAG of jobs...
+Creating conda environment /projects/prjs1616/gatk_paper_demo/envs/gatk.yaml...
+Downloading and installing remote packages.
+CreateCondaEnvironmentException:
+Could not create conda environment from /projects/prjs1616/gatk_paper_demo/envs/gatk.yaml:
+Command:
+mamba env create --quiet --file "/gpfs/work2/0/prjs1616/gatk_paper_demo/conda_managed_new/8ddcafbc18dc6ec58ba0f05144edd65a_.yaml" --prefix "/gpfs/work2/0/prjs1616/gatk_paper_demo/conda_managed_new/8ddcafbc18dc6ec58ba0f05144edd65a_"
+Output:
+error    libmamba Non-conda folder exists at prefix - aborting.
+critical libmamba Non-conda folder exists at prefix - aborting.
+

@@ -1,0 +1,47 @@
+Building DAG of jobs...
+Creating conda environment /projects/prjs1616/gatk_paper_demo/envs/aligner.yaml...
+Downloading and installing remote packages.
+Full Traceback (most recent call last):
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/deployment/conda.py", line 576, in create
+    out = create_env(env_file, filetype="yaml")
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/deployment/conda.py", line 538, in create_env
+    out = shell.check_output(
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/shell.py", line 61, in check_output
+    return sp.check_output(cmd, shell=True, executable=executable, **kwargs)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'mamba env create --quiet --file "/gpfs/work2/0/prjs1616/gatk_paper_demo/conda_managed_new/85335f0430d6870ed286e14530fb16bf_.yaml" --prefix "/gpfs/work2/0/prjs1616/gatk_paper_demo/conda_managed_new/85335f0430d6870ed286e14530fb16bf_"' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/__init__.py", line 792, in snakemake
+    success = workflow.execute(
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/workflow.py", line 1078, in execute
+    dag.create_conda_envs(
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/dag.py", line 359, in create_conda_envs
+    env.create(dryrun)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/deployment/conda.py", line 595, in create
+    raise CreateCondaEnvironmentException(
+snakemake.exceptions.CreateCondaEnvironmentException: Could not create conda environment from /projects/prjs1616/gatk_paper_demo/envs/aligner.yaml:
+Command:
+mamba env create --quiet --file "/gpfs/work2/0/prjs1616/gatk_paper_demo/conda_managed_new/85335f0430d6870ed286e14530fb16bf_.yaml" --prefix "/gpfs/work2/0/prjs1616/gatk_paper_demo/conda_managed_new/85335f0430d6870ed286e14530fb16bf_"
+Output:
+error    libmamba Non-conda folder exists at prefix - aborting.
+critical libmamba Non-conda folder exists at prefix - aborting.
+
+
+CreateCondaEnvironmentException:
+Could not create conda environment from /projects/prjs1616/gatk_paper_demo/envs/aligner.yaml:
+Command:
+mamba env create --quiet --file "/gpfs/work2/0/prjs1616/gatk_paper_demo/conda_managed_new/85335f0430d6870ed286e14530fb16bf_.yaml" --prefix "/gpfs/work2/0/prjs1616/gatk_paper_demo/conda_managed_new/85335f0430d6870ed286e14530fb16bf_"
+Output:
+error    libmamba Non-conda folder exists at prefix - aborting.
+critical libmamba Non-conda folder exists at prefix - aborting.
+
+unlocking
+removing lock
+removing lock
+removed all locks

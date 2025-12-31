@@ -1,0 +1,50 @@
+# Configuration file for GATK RNA-seq variant calling pipeline
+#--------------
+# Sample information
+vcf_dir: "/projects/prjs1616/baria_gatk/results/Liver" 
+
+# Reference files
+reference:
+  fasta: "/projects/prjs1616/baria_gatk/resources/ref/references/genome.fa" 
+  dbsnp: "/projects/prjs1616/baria_gatk/resources/ref/known_variants/Homo_sapiens_assembly38.dbsnp138.vcf" 
+  mills_indels: "/projects/prjs1616/baria_gatk/resources/ref/known_variants/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz"
+  #sample_map: "/projects/prjs1616/baria_gatk/data/BARIA_sample_map"
+
+
+
+#--------------
+# Chromosomes for parallel processing
+chromosomes: ["chr1", "chr2", "chr3", "chr4", "chr5", "chr6", "chr7", "chr8", "chr9", "chr10", 
+              "chr11", "chr12", "chr13", "chr14", "chr15", "chr16", "chr17", "chr18", "chr19", 
+              "chr20", "chr21", "chr22", "chrX", "chrY"]
+#chromosomes: ["chr1", "chr12"]
+
+#chromosomes: [ "chr2", "chr3", "chr4", "chr5", "chr6", "chr7", "chr8", "chr9", "chr10", 
+#              "chr11"]
+
+#--------------
+# Output directories
+jointCall_output_dir: "/projects/prjs1616/baria_gatk/join_calling_Chrom/result/liver/join_call"
+log_dir: "/projects/prjs1616/baria_gatk/join_calling_Chrom/logs_liver"
+temp_dir: "/projects/prjs1616/baria_gatk/join_calling_Chrom/temp_liver"
+genomicsDB_dir: "/projects/prjs1616/baria_gatk/join_calling_Chrom/result/liver/genomicsDB"
+filtered_output_dir : "/projects/prjs1616/baria_gatk/join_calling_Chrom/result/liver/filter_vcf"
+
+#--------------
+resources:
+  # Thread allocation for tools
+  GenomicsDB_threads: 120
+  join_caller_threads: 192
+  
+
+  # Memory allocation (in GB) — useful for Java `-Xmx` and resource tracking
+  GenomicsDB_memory: 128
+  join_caller_memory: 336
+
+# Filtering parameters
+variant_filters:
+  name: "RNASeqFilter"
+  expression: "QD < 5.0 || FS > 20.0 || SOR > 3.0 || MQ < 40.0 || MQRankSum < -12.5 || ReadPosRankSum < -8.0"
+  min_confidence: 20.0
+
+

@@ -1,0 +1,52 @@
+__default__:
+  partition: genoa
+  time: "10:00:00"
+  mem: "16G"
+  cpus_per_task: 24
+  job_name: "{rule}"
+  output: "/projects/prjs1616/gatk_paper_demo/logs/slurm-{rule}-{jobid}.out"
+  error: "/projects/prjs1616/gatk_paper_demo/logs/slurm-{rule}-{jobid}.err"
+  account: ausei14399
+
+
+
+# Rule-specific configurations
+fastq_to_bam:
+  time: "10:00:00"
+  mem: "64G"
+  cpus_per_task: 64
+
+mark_duplicates:
+  time: "05:00:00"
+  mem: "64G"
+  cpus_per_task: 64
+
+
+split_n_cigar_reads:
+  time: "10:00:00"
+  mem: "32G"
+  cpus_per_task: 96
+
+haplotype_caller:
+  time: "10:00:00"          
+  mem: "128G"
+  cpus_per_task: 96
+
+
+GenomicsDB:
+  time: "120:00:00"
+  mem: "128G"
+  cpus_per_task: 96
+
+
+join_genotyping:
+  time: "120:00:00"
+  mem: "336G"
+  cpus_per_task: 192
+
+
+annotate_variant_filter:
+  time: "50:00:00"
+  mem: "32G"
+  cpus_per_task: 96
+

@@ -1,0 +1,3 @@
+NameError in file /gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk, line 348:
+name 'CHROMOSOMES' is not defined
+  File "/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk", line 348, in <module>

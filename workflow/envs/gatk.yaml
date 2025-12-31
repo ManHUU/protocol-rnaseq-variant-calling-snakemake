@@ -1,0 +1,9 @@
+name: gatk_env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - gatk4=4.6.1.0
+  - samtools=1.17
+  - openjdk=17

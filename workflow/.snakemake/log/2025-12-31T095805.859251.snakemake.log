@@ -1,0 +1,272 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 1
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+apply_BQSR                     6
+base_recalibrator              6
+fastq_to_bam                   6
+filter_standard_contigs        6
+haplotype_caller               6
+index_filtered_bam             6
+index_gvcf                     6
+mark_duplicates                6
+split_n_cigar_reads            6
+total                         55
+
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 1}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 9223372036854775806, '_nodes': 0}
+
+[Wed Dec 31 09:58:14 2025]
+rule fastq_to_bam:
+    input: /projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_10.fastq, /projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_10.sorted.bam, /projects/prjs1616/gatk_paper_demo/results/liver_10.sorted.bam.bai
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_10.fastq_to_bam.log
+    jobid: 34
+    reason: Params have changed since last execution
+    wildcards: sample=liver_10
+    resources: mem_mb=65536, mem_mib=62500, disk_mb=5303, disk_mib=5058, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "fastq_to_bam", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_10.fastq", "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_10.sorted.bam", "/projects/prjs1616/gatk_paper_demo/results/liver_10.sorted.bam.bai"], "wildcards": {"sample": "liver_10"}, "params": {"ref": "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/GRCh38.primary_assembly.genome.fa", "sample_id": "liver_10", "out_prefix": "/projects/prjs1616/gatk_paper_demo/results/liver_10."}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_10.fastq_to_bam.log"], "threads": 1, "resources": {"mem_mb": 65536, "mem_mib": 62500, "disk_mb": 5303, "disk_mib": 5058, "tmpdir": "<TBD>"}, "jobid": 34, "cluster": {"partition": "genoa", "time": "10:00:00", "mem": "64G", "cpus_per_task": 64, "job_name": "fastq_to_bam", "output": "/projects/prjs1616/gatk_paper_demo/logs/slurm-fastq_to_bam-34.out", "error": "/projects/prjs1616/gatk_paper_demo/logs/slurm-fastq_to_bam-34.err", "account": "ausei14399"}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'fastq_to_bam:sample=liver_10' --allowed-rules 'fastq_to_bam' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=65536' 'mem_mib=62500' 'disk_mb=5303' 'disk_mib=5058' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74' '/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_10.fastq' '/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/2154ea926f49aaba913283001c26aaa7_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'code' 'params' 'input' 'mtime' 'software-env' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/34.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/34.jobfailed'; exit 1)
+
+Submitted job 34 with external jobid 'Submitted batch job 17995586'.
+[Wed Dec 31 09:59:44 2025]
+Finished job 34.
+1 of 55 steps (2%) done
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 1}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 9223372036854775806, '_nodes': 0}
+
+[Wed Dec 31 09:59:44 2025]
+rule fastq_to_bam:
+    input: /projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_11.fastq, /projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam, /projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam.bai
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_11.fastq_to_bam.log
+    jobid: 43
+    reason: Params have changed since last execution
+    wildcards: sample=liver_11
+    resources: mem_mb=65536, mem_mib=62500, disk_mb=5671, disk_mib=5409, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "fastq_to_bam", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_11.fastq", "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam", "/projects/prjs1616/gatk_paper_demo/results/liver_11.sorted.bam.bai"], "wildcards": {"sample": "liver_11"}, "params": {"ref": "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/GRCh38.primary_assembly.genome.fa", "sample_id": "liver_11", "out_prefix": "/projects/prjs1616/gatk_paper_demo/results/liver_11."}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_11.fastq_to_bam.log"], "threads": 1, "resources": {"mem_mb": 65536, "mem_mib": 62500, "disk_mb": 5671, "disk_mib": 5409, "tmpdir": "<TBD>"}, "jobid": 43, "cluster": {"partition": "genoa", "time": "10:00:00", "mem": "64G", "cpus_per_task": 64, "job_name": "fastq_to_bam", "output": "/projects/prjs1616/gatk_paper_demo/logs/slurm-fastq_to_bam-43.out", "error": "/projects/prjs1616/gatk_paper_demo/logs/slurm-fastq_to_bam-43.err", "account": "ausei14399"}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'fastq_to_bam:sample=liver_11' --allowed-rules 'fastq_to_bam' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=65536' 'mem_mib=62500' 'disk_mb=5671' 'disk_mib=5409' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74' '/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_11.fastq' '/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/2154ea926f49aaba913283001c26aaa7_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'code' 'params' 'input' 'mtime' 'software-env' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/43.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/43.jobfailed'; exit 1)
+
+Submitted job 43 with external jobid 'Submitted batch job 17995590'.
+[Wed Dec 31 10:01:04 2025]
+Finished job 43.
+2 of 55 steps (4%) done
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 1}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 9223372036854775806, '_nodes': 0}
+
+[Wed Dec 31 10:01:04 2025]
+rule fastq_to_bam:
+    input: /projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_07.fastq, /projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_07.sorted.bam, /projects/prjs1616/gatk_paper_demo/results/liver_07.sorted.bam.bai
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_07.fastq_to_bam.log
+    jobid: 7
+    reason: Params have changed since last execution
+    wildcards: sample=liver_07
+    resources: mem_mb=65536, mem_mib=62500, disk_mb=8331, disk_mib=7946, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "fastq_to_bam", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_07.fastq", "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_07.sorted.bam", "/projects/prjs1616/gatk_paper_demo/results/liver_07.sorted.bam.bai"], "wildcards": {"sample": "liver_07"}, "params": {"ref": "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/GRCh38.primary_assembly.genome.fa", "sample_id": "liver_07", "out_prefix": "/projects/prjs1616/gatk_paper_demo/results/liver_07."}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_07.fastq_to_bam.log"], "threads": 1, "resources": {"mem_mb": 65536, "mem_mib": 62500, "disk_mb": 8331, "disk_mib": 7946, "tmpdir": "<TBD>"}, "jobid": 7, "cluster": {"partition": "genoa", "time": "10:00:00", "mem": "64G", "cpus_per_task": 64, "job_name": "fastq_to_bam", "output": "/projects/prjs1616/gatk_paper_demo/logs/slurm-fastq_to_bam-7.out", "error": "/projects/prjs1616/gatk_paper_demo/logs/slurm-fastq_to_bam-7.err", "account": "ausei14399"}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'fastq_to_bam:sample=liver_07' --allowed-rules 'fastq_to_bam' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=65536' 'mem_mib=62500' 'disk_mb=8331' 'disk_mib=7946' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74' '/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_07.fastq' '/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/2154ea926f49aaba913283001c26aaa7_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'code' 'params' 'input' 'mtime' 'software-env' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/7.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/7.jobfailed'; exit 1)
+
+Submitted job 7 with external jobid 'Submitted batch job 17995594'.
+[Wed Dec 31 10:02:44 2025]
+Finished job 7.
+3 of 55 steps (5%) done
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 1}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 9223372036854775806, '_nodes': 0}
+
+[Wed Dec 31 10:02:44 2025]
+rule fastq_to_bam:
+    input: /projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_12.fastq, /projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_12.sorted.bam, /projects/prjs1616/gatk_paper_demo/results/liver_12.sorted.bam.bai
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_12.fastq_to_bam.log
+    jobid: 52
+    reason: Params have changed since last execution
+    wildcards: sample=liver_12
+    resources: mem_mb=65536, mem_mib=62500, disk_mb=5479, disk_mib=5226, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "fastq_to_bam", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_12.fastq", "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_12.sorted.bam", "/projects/prjs1616/gatk_paper_demo/results/liver_12.sorted.bam.bai"], "wildcards": {"sample": "liver_12"}, "params": {"ref": "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/GRCh38.primary_assembly.genome.fa", "sample_id": "liver_12", "out_prefix": "/projects/prjs1616/gatk_paper_demo/results/liver_12."}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_12.fastq_to_bam.log"], "threads": 1, "resources": {"mem_mb": 65536, "mem_mib": 62500, "disk_mb": 5479, "disk_mib": 5226, "tmpdir": "<TBD>"}, "jobid": 52, "cluster": {"partition": "genoa", "time": "10:00:00", "mem": "64G", "cpus_per_task": 64, "job_name": "fastq_to_bam", "output": "/projects/prjs1616/gatk_paper_demo/logs/slurm-fastq_to_bam-52.out", "error": "/projects/prjs1616/gatk_paper_demo/logs/slurm-fastq_to_bam-52.err", "account": "ausei14399"}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'fastq_to_bam:sample=liver_12' --allowed-rules 'fastq_to_bam' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=65536' 'mem_mib=62500' 'disk_mb=5479' 'disk_mib=5226' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74' '/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_12.fastq' '/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/2154ea926f49aaba913283001c26aaa7_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'code' 'params' 'input' 'mtime' 'software-env' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/52.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/52.jobfailed'; exit 1)
+
+Submitted job 52 with external jobid 'Submitted batch job 17995600'.
+[Wed Dec 31 10:04:14 2025]
+Finished job 52.
+4 of 55 steps (7%) done
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 1}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 9223372036854775806, '_nodes': 0}
+
+[Wed Dec 31 10:04:14 2025]
+rule mark_duplicates:
+    input: /projects/prjs1616/gatk_paper_demo/results/liver_12.sorted.bam
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_12.markdup.bam, /projects/prjs1616/gatk_paper_demo/results/liver_12.markdup.bam.bai, /projects/prjs1616/gatk_paper_demo/results/liver_12.markdup_metrics.txt
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_12.mark_duplicates.log
+    jobid: 51
+    reason: Input files updated by another job: /projects/prjs1616/gatk_paper_demo/results/liver_12.sorted.bam
+    wildcards: sample=liver_12
+    resources: mem_mb=65536, mem_mib=62500, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "mark_duplicates", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/results/liver_12.sorted.bam"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_12.markdup.bam", "/projects/prjs1616/gatk_paper_demo/results/liver_12.markdup.bam.bai", "/projects/prjs1616/gatk_paper_demo/results/liver_12.markdup_metrics.txt"], "wildcards": {"sample": "liver_12"}, "params": {}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_12.mark_duplicates.log"], "threads": 1, "resources": {"mem_mb": 65536, "mem_mib": 62500, "disk_mb": 1000, "disk_mib": 954, "tmpdir": "<TBD>"}, "jobid": 51, "cluster": {"partition": "genoa", "time": "05:00:00", "mem": "64G", "cpus_per_task": 64, "job_name": "mark_duplicates", "output": "/projects/prjs1616/gatk_paper_demo/logs/slurm-mark_duplicates-51.out", "error": "/projects/prjs1616/gatk_paper_demo/logs/slurm-mark_duplicates-51.err", "account": "ausei14399"}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'mark_duplicates:sample=liver_12' --allowed-rules 'mark_duplicates' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=65536' 'mem_mib=62500' 'disk_mb=1000' 'disk_mib=954' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74' '/projects/prjs1616/gatk_paper_demo/results/liver_12.sorted.bam' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/591ad356d55ec55aa5e6097d9230e77e_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'code' 'params' 'input' 'mtime' 'software-env' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/51.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/51.jobfailed'; exit 1)
+
+Submitted job 51 with external jobid 'Submitted batch job 17995603'.
+[Wed Dec 31 10:05:54 2025]
+Finished job 51.
+5 of 55 steps (9%) done
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 1}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 9223372036854775806, '_nodes': 0}
+
+[Wed Dec 31 10:05:55 2025]
+rule filter_standard_contigs:
+    input: /projects/prjs1616/gatk_paper_demo/results/liver_12.markdup.bam
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_12.markdup.filtered.bam
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_12.filter_contigs.log
+    jobid: 50
+    reason: Input files updated by another job: /projects/prjs1616/gatk_paper_demo/results/liver_12.markdup.bam
+    wildcards: sample=liver_12
+    resources: mem_mb=32768, mem_mib=31250, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "filter_standard_contigs", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/results/liver_12.markdup.bam"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_12.markdup.filtered.bam"], "wildcards": {"sample": "liver_12"}, "params": {}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_12.filter_contigs.log"], "threads": 1, "resources": {"mem_mb": 32768, "mem_mib": 31250, "disk_mb": 1000, "disk_mib": 954, "tmpdir": "<TBD>"}, "jobid": 50, "cluster": {"partition": "genoa", "time": "10:00:00", "mem": "16G", "cpus_per_task": 24, "job_name": "filter_standard_contigs", "output": "/projects/prjs1616/gatk_paper_demo/logs/slurm-filter_standard_contigs-50.out", "error": "/projects/prjs1616/gatk_paper_demo/logs/slurm-filter_standard_contigs-50.err", "account": "ausei14399"}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'filter_standard_contigs:sample=liver_12' --allowed-rules 'filter_standard_contigs' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=32768' 'mem_mib=31250' 'disk_mb=1000' 'disk_mib=954' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74' '/projects/prjs1616/gatk_paper_demo/results/liver_12.markdup.bam' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/591ad356d55ec55aa5e6097d9230e77e_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'code' 'params' 'input' 'mtime' 'software-env' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/50.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/50.jobfailed'; exit 1)
+
+Submitted job 50 with external jobid 'Submitted batch job 17995627'.
+[Wed Dec 31 10:07:04 2025]
+Finished job 50.
+6 of 55 steps (11%) done
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 1}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 9223372036854775806, '_nodes': 0}
+
+[Wed Dec 31 10:07:05 2025]
+rule mark_duplicates:
+    input: /projects/prjs1616/gatk_paper_demo/results/liver_10.sorted.bam
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.bam, /projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.bam.bai, /projects/prjs1616/gatk_paper_demo/results/liver_10.markdup_metrics.txt
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_10.mark_duplicates.log
+    jobid: 33
+    reason: Input files updated by another job: /projects/prjs1616/gatk_paper_demo/results/liver_10.sorted.bam
+    wildcards: sample=liver_10
+    resources: mem_mb=65536, mem_mib=62500, disk_mb=1147, disk_mib=1094, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "mark_duplicates", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/results/liver_10.sorted.bam"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.bam", "/projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.bam.bai", "/projects/prjs1616/gatk_paper_demo/results/liver_10.markdup_metrics.txt"], "wildcards": {"sample": "liver_10"}, "params": {}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_10.mark_duplicates.log"], "threads": 1, "resources": {"mem_mb": 65536, "mem_mib": 62500, "disk_mb": 1147, "disk_mib": 1094, "tmpdir": "<TBD>"}, "jobid": 33, "cluster": {"partition": "genoa", "time": "05:00:00", "mem": "64G", "cpus_per_task": 64, "job_name": "mark_duplicates", "output": "/projects/prjs1616/gatk_paper_demo/logs/slurm-mark_duplicates-33.out", "error": "/projects/prjs1616/gatk_paper_demo/logs/slurm-mark_duplicates-33.err", "account": "ausei14399"}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'mark_duplicates:sample=liver_10' --allowed-rules 'mark_duplicates' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=65536' 'mem_mib=62500' 'disk_mb=1147' 'disk_mib=1094' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74' '/projects/prjs1616/gatk_paper_demo/results/liver_10.sorted.bam' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/591ad356d55ec55aa5e6097d9230e77e_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'code' 'params' 'input' 'mtime' 'software-env' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/33.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/33.jobfailed'; exit 1)
+
+Submitted job 33 with external jobid 'Submitted batch job 17995636'.
+[Wed Dec 31 10:09:15 2025]
+Finished job 33.
+7 of 55 steps (13%) done
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 1}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 9223372036854775806, '_nodes': 0}
+
+[Wed Dec 31 10:09:15 2025]
+rule filter_standard_contigs:
+    input: /projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.bam
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.filtered.bam
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_10.filter_contigs.log
+    jobid: 32
+    reason: Input files updated by another job: /projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.bam
+    wildcards: sample=liver_10
+    resources: mem_mb=32768, mem_mib=31250, disk_mb=1237, disk_mib=1180, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "filter_standard_contigs", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.bam"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.filtered.bam"], "wildcards": {"sample": "liver_10"}, "params": {}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_10.filter_contigs.log"], "threads": 1, "resources": {"mem_mb": 32768, "mem_mib": 31250, "disk_mb": 1237, "disk_mib": 1180, "tmpdir": "<TBD>"}, "jobid": 32, "cluster": {"partition": "genoa", "time": "10:00:00", "mem": "16G", "cpus_per_task": 24, "job_name": "filter_standard_contigs", "output": "/projects/prjs1616/gatk_paper_demo/logs/slurm-filter_standard_contigs-32.out", "error": "/projects/prjs1616/gatk_paper_demo/logs/slurm-filter_standard_contigs-32.err", "account": "ausei14399"}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'filter_standard_contigs:sample=liver_10' --allowed-rules 'filter_standard_contigs' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=32768' 'mem_mib=31250' 'disk_mb=1237' 'disk_mib=1180' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74' '/projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.bam' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/591ad356d55ec55aa5e6097d9230e77e_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'code' 'params' 'input' 'mtime' 'software-env' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/32.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/32.jobfailed'; exit 1)
+
+Submitted job 32 with external jobid 'Submitted batch job 17995642'.
+[Wed Dec 31 10:11:15 2025]
+Finished job 32.
+8 of 55 steps (15%) done
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 1}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 9223372036854775806, '_nodes': 0}
+
+[Wed Dec 31 10:11:15 2025]
+rule index_filtered_bam:
+    input: /projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.filtered.bam
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.filtered.bam.bai
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_10.index_filtered_bam.log
+    jobid: 35
+    reason: Input files updated by another job: /projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.filtered.bam
+    wildcards: sample=liver_10
+    resources: mem_mb=32768, mem_mib=31250, disk_mb=1004, disk_mib=958, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "index_filtered_bam", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.filtered.bam"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.filtered.bam.bai"], "wildcards": {"sample": "liver_10"}, "params": {}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_10.index_filtered_bam.log"], "threads": 1, "resources": {"mem_mb": 32768, "mem_mib": 31250, "disk_mb": 1004, "disk_mib": 958, "tmpdir": "<TBD>"}, "jobid": 35, "cluster": {"partition": "genoa", "time": "10:00:00", "mem": "16G", "cpus_per_task": 24, "job_name": "index_filtered_bam", "output": "/projects/prjs1616/gatk_paper_demo/logs/slurm-index_filtered_bam-35.out", "error": "/projects/prjs1616/gatk_paper_demo/logs/slurm-index_filtered_bam-35.err", "account": "ausei14399"}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'index_filtered_bam:sample=liver_10' --allowed-rules 'index_filtered_bam' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=32768' 'mem_mib=31250' 'disk_mb=1004' 'disk_mib=958' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74' '/projects/prjs1616/gatk_paper_demo/results/liver_10.markdup.filtered.bam' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/591ad356d55ec55aa5e6097d9230e77e_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'code' 'params' 'input' 'mtime' 'software-env' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/35.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/35.jobfailed'; exit 1)
+
+Submitted job 35 with external jobid 'Submitted batch job 17995652'.
+[Wed Dec 31 10:12:05 2025]
+Finished job 35.
+9 of 55 steps (16%) done
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 1}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 9223372036854775806, '_nodes': 0}
+
+[Wed Dec 31 10:12:05 2025]
+rule fastq_to_bam:
+    input: /projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_08.fastq, /projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_08.sorted.bam, /projects/prjs1616/gatk_paper_demo/results/liver_08.sorted.bam.bai
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_08.fastq_to_bam.log
+    jobid: 16
+    reason: Params have changed since last execution
+    wildcards: sample=liver_08
+    resources: mem_mb=65536, mem_mib=62500, disk_mb=5078, disk_mib=4843, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "fastq_to_bam", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_08.fastq", "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_08.sorted.bam", "/projects/prjs1616/gatk_paper_demo/results/liver_08.sorted.bam.bai"], "wildcards": {"sample": "liver_08"}, "params": {"ref": "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/GRCh38.primary_assembly.genome.fa", "sample_id": "liver_08", "out_prefix": "/projects/prjs1616/gatk_paper_demo/results/liver_08."}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_08.fastq_to_bam.log"], "threads": 1, "resources": {"mem_mb": 65536, "mem_mib": 62500, "disk_mb": 5078, "disk_mib": 4843, "tmpdir": "<TBD>"}, "jobid": 16, "cluster": {"partition": "genoa", "time": "10:00:00", "mem": "64G", "cpus_per_task": 64, "job_name": "fastq_to_bam", "output": "/projects/prjs1616/gatk_paper_demo/logs/slurm-fastq_to_bam-16.out", "error": "/projects/prjs1616/gatk_paper_demo/logs/slurm-fastq_to_bam-16.err", "account": "ausei14399"}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'fastq_to_bam:sample=liver_08' --allowed-rules 'fastq_to_bam' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=65536' 'mem_mib=62500' 'disk_mb=5078' 'disk_mib=4843' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74' '/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_08.fastq' '/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/2154ea926f49aaba913283001c26aaa7_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'code' 'params' 'input' 'mtime' 'software-env' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/16.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.z2flnf74/16.jobfailed'; exit 1)
+
+Submitted job 16 with external jobid 'Submitted batch job 17995653'.
+Terminating processes on user request, this might take some time.
+No --cluster-cancel given. Will exit after finishing currently running jobs.
+Complete log: .snakemake/log/2025-12-31T095805.859251.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

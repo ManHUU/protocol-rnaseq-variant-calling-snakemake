@@ -1,0 +1,76 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 10
+Job stats:
+job             count
+------------  -------
+all                 1
+fastq_to_bam        6
+total               7
+
+Resources before job selection: {'_cores': 9223372036854775807, '_nodes': 10}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (6)
+Resources after job selection: {'_cores': 9223372036854775747, '_nodes': 4}
+
+[Tue Dec 30 13:46:41 2025]
+rule fastq_to_bam:
+    input: /projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_08.fastq, /projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index
+    output: /projects/prjs1616/gatk_paper_demo/results/liver_08.sorted.bam, /projects/prjs1616/gatk_paper_demo/results/liver_08.sorted.bam.bai
+    log: /projects/prjs1616/gatk_paper_demo/logs/liver_08.fastq_to_bam.log
+    jobid: 2
+    reason: Missing output files: /projects/prjs1616/gatk_paper_demo/results/liver_08.sorted.bam
+    wildcards: sample=liver_08
+    threads: 10
+    resources: mem_mb=65536, mem_mib=62500, disk_mb=5078, disk_mib=4843, tmpdir=<TBD>
+
+Jobscript:
+#!/bin/sh
+# properties = {"type": "single", "rule": "fastq_to_bam", "local": false, "input": ["/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_08.fastq", "/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index"], "output": ["/projects/prjs1616/gatk_paper_demo/results/liver_08.sorted.bam", "/projects/prjs1616/gatk_paper_demo/results/liver_08.sorted.bam.bai"], "wildcards": {"sample": "liver_08"}, "params": {"ref": "/projects/prjs1616/gatk_paper_demo/resources/ref/references/genome.fa", "sample_id": "liver_08", "out_prefix": "/projects/prjs1616/gatk_paper_demo/results/liver_08."}, "log": ["/projects/prjs1616/gatk_paper_demo/logs/liver_08.fastq_to_bam.log"], "threads": 10, "resources": {"mem_mb": 65536, "mem_mib": 62500, "disk_mb": 5078, "disk_mib": 4843, "tmpdir": "<TBD>"}, "jobid": 2, "cluster": {}}
+cd /gpfs/work2/0/prjs1616/gatk_paper_demo/script && /home/mhu/miniconda3/envs/snake310/bin/python3.10 -m snakemake --snakefile '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk' --target-jobs 'fastq_to_bam:sample=liver_08' --allowed-rules 'fastq_to_bam' --cores 'all' --attempt 1 --force-use-threads  --resources 'mem_mb=65536' 'mem_mib=62500' 'disk_mb=5078' 'disk_mib=4843' --wait-for-files '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.xtn6owhv' '/projects/prjs1616/gatk_paper_demo/data/liver_fastq/liver_08.fastq' '/projects/prjs1616/gatk_paper_demo/resources/star_hg38_index/star_hg38_index' '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory/c4d2e23cb09e75d7d55adecb80447f23_' --force --keep-target-files --keep-remote --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers 'params' 'input' 'code' 'software-env' 'mtime' --skip-script-cleanup  --use-conda  --conda-frontend 'conda' --conda-prefix '/gpfs/work2/0/prjs1616/gatk_paper_demo/snakemake_conda_factory' --conda-base-path '/home/mhu/miniconda3' --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --configfiles '/gpfs/work2/0/prjs1616/gatk_paper_demo/configs/config.yaml' --latency-wait 120 --scheduler 'ilp' --scheduler-solver-path '/home/mhu/miniconda3/envs/snake310/bin' --default-resources 'mem_mb=max(2*input.size_mb, 1000)' 'disk_mb=max(2*input.size_mb, 1000)' 'tmpdir=system_tmpdir' --mode 2 && touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.xtn6owhv/2.jobfinished' || (touch '/gpfs/work2/0/prjs1616/gatk_paper_demo/script/.snakemake/tmp.xtn6owhv/2.jobfailed'; exit 1)
+
+Full Traceback (most recent call last):
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/jobs.py", line 1009, in format_wildcards
+    return format(string, **_variables)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/utils.py", line 425, in format
+    return fmt.format(_pattern, *args, **variables)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/string.py", line 161, in format
+    return self.vformat(format_string, args, kwargs)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/string.py", line 165, in vformat
+    result, _ = self._vformat(format_string, args, kwargs, used_args, 2)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/string.py", line 205, in _vformat
+    obj, arg_used = self.get_field(field_name, args, kwargs)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/string.py", line 276, in get_field
+    obj = getattr(obj, i)
+AttributeError: 'Wildcards' object has no attribute 'time'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/__init__.py", line 792, in snakemake
+    success = workflow.execute(
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/workflow.py", line 1246, in execute
+    raise e
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/workflow.py", line 1242, in execute
+    success = self.scheduler.schedule()
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/scheduler.py", line 636, in schedule
+    self.run(runjobs)
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/scheduler.py", line 685, in run
+    executor.run_jobs(
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/executors/__init__.py", line 158, in run_jobs
+    self.run(
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/executors/__init__.py", line 1243, in run
+    submitcmd = job.format_wildcards(
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/jobs.py", line 1011, in format_wildcards
+    raise RuleException(
+snakemake.exceptions.RuleException: AttributeError: 'Wildcards' object has no attribute 'time', when formatting the following:
+sbatch --account=ausei14399 --partition=genoa --time={cluster.time} --cpus-per-task={cluster.cpus-per-task} --mem={cluster.mem}
+
+RuleException in rule fastq_to_bam in file /gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk, line 45:
+AttributeError: 'Wildcards' object has no attribute 'time', when formatting the following:
+sbatch --account=ausei14399 --partition=genoa --time={cluster.time} --cpus-per-task={cluster.cpus-per-task} --mem={cluster.mem}
+unlocking
+removing lock
+removing lock
+removed all locks

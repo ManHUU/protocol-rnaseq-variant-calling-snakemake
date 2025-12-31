@@ -1,0 +1,12 @@
+Full Traceback (most recent call last):
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/__init__.py", line 671, in snakemake
+    workflow.include(
+  File "/home/mhu/miniconda3/envs/snake310/lib/python3.10/site-packages/snakemake/workflow.py", line 1389, in include
+    exec(compile(code, snakefile.get_path_or_uri(), "exec"), self.globals)
+  File "/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk", line 87, in <module>
+    echo "---------------------------------------"
+KeyError: 'fastq_to_bam'
+
+KeyError in file /gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk, line 62:
+'fastq_to_bam'
+  File "/gpfs/work2/0/prjs1616/gatk_paper_demo/script/Snakefile_original.smk", line 62, in <module>
